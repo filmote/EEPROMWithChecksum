@@ -8,7 +8,7 @@ class StructWithHash {
         uint16_t hash = 0;
 
     public:
-        virtual void reset() {}
+        void reset() {}
 
 
     template <typename T> T &get(int idx, T &t) {
@@ -28,7 +28,7 @@ class StructWithHash {
         // If hashes differ then reset and rewrite ..
 
         if (this->hash != calcHash) {
-            (static_cast<StructWithHash>(t)).reset();
+            t.reset();
             this->put(idx, t);
         }
 
