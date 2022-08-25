@@ -8,7 +8,7 @@ class StructWithHash {
         uint16_t hash = 0;
 
     public:
-        void reset() {}
+        virtual void reset() {}
 
 
     template <typename T> T &get(int idx, T &t) {
